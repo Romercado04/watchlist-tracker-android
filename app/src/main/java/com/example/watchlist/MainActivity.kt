@@ -24,8 +24,3 @@ class MainActivity : ComponentActivity() {
         }
     }
 }
-
-@Composable
-fun WatchlistApp(){
-
-}

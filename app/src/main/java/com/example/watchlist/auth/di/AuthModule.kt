@@ -8,6 +8,7 @@ import com.example.watchlist.auth.domain.usecase.SignInWithEmailUseCase
 import com.example.watchlist.auth.domain.usecase.SignInWithGoogleUseCase
 import com.example.watchlist.auth.domain.usecase.SignOutUseCase
 import com.example.watchlist.auth.presentation.viewmodel.AuthViewModel
+import com.example.watchlist.core.data.SessionDataStore
 import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.auth
@@ -40,4 +41,7 @@ val authModule = module {
             sessionDataStore = get()
         )
     }
+
+    //session data store
+    single { SessionDataStore(get()) }
 }
