@@ -48,9 +48,9 @@ fun WatchlistNavHost() {
         // 🏠 HOME
         composable(NavRoutes.HOME) {
             HomeScreen(
-                onLogout = {
+                onLogoutSuccess = {
                     navController.navigate(NavRoutes.LOGIN) {
-                        popUpTo(NavRoutes.HOME) { inclusive = true }
+                        popUpTo(0)
                     }
                 }
             )

@@ -6,10 +6,13 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import com.example.watchlist.auth.presentation.viewmodel.AuthViewModel
+import org.koin.androidx.compose.koinViewModel
 
 @Composable
 fun HomeScreen(
-    onLogout: () -> Unit
+    viewModel: AuthViewModel = koinViewModel(),
+    onLogoutSuccess: () -> Unit
 ) {
     Column(
         modifier = Modifier
@@ -26,7 +29,12 @@ fun HomeScreen(
 
         Spacer(modifier = Modifier.height(16.dp))
 
-        Button(onClick = onLogout) {
+        Button(
+            onClick = {
+                viewModel.signOutUser()
+                onLogoutSuccess()
+            }
+        ) {
             Text("Cerrar sesión")
         }
     }
