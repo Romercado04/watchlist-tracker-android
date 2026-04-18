@@ -48,8 +48,10 @@ dependencies {
     implementation(libs.koin.androidx.compose)
 
     implementation(platform(libs.firebase.bom))
+
     implementation(libs.firebase.auth)
     implementation(libs.google.play.auth)
+    implementation("com.google.firebase:firebase-firestore-ktx:24.10.3")
 
     // DataStore Preferences
     implementation("androidx.datastore:datastore-preferences:1.1.0")
